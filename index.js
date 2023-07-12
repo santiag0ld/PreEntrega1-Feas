@@ -1,7 +1,7 @@
   
-  const inicial = parseInt(prompt("Ingrese el monto inicial de la inversion:"));
-  const tasa = parseInt(prompt("Ingrese la tasa de interes anual estimada:"));
-  const periodo = parseInt(prompt("Ingrese el tiempo de la inversion en años:")); 
+  const inicial = parseInt(prompt("Ingrese el monto inicial de la inversión:"));
+  const tasa = parseInt(prompt("Ingrese la tasa de interés anual estimada:"));
+  const periodo = parseInt(prompt("Ingrese el tiempo de la inversión en años:")); 
   
 
 function calcularInteres(principal, tasa, tiempo) {
