@@ -1,16 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
 </head>
+
 <body>
 
-    <h1>Calculadora de Interes Compuesto</h1>
+    <head>
+        <h1>Calculadora de Interes Compuesto</h1>
 
-        <p>Presione f12 para ver su resultado.</p>
+        <h2>Presione f12 para ver su resultado.</h2>
+    </head>
 
-    <script src="./index.js"></script>
+    <main>
+
+            <form action="submit">
+               <div>
+                <label for="inicial"> Monto Inicial</label>
+                <p>Ingrese el monto que desea invertir.</p>
+                <input type="number" required>
+               </div>
+               <div>
+                <label for="tasa"> Interes Anual</label>
+                <p>Ingrese el interés total anual estimado.</p>
+                <input type="number" required>
+               </div> 
+               <div>
+                <label for="periodo"> Tiempo de la Inversión</label>
+                <p>Ingrese el tiempo por el que se mantendrá la inversión en años.</p>
+                <input type="number" required>
+               </div>
+               <div>
+                <button>Calcular</button>
+                <button>Reiniciar</button>
+               </div> 
+            </form>
+
+    </main>
+    <script src="./js/index.js"></script>
 </body>
+
 </html>
+
+
+
+<!--
+<section class="botones">
+    <input
+      type="button"
+      value="Boton Ej 1"
+      onclick="alert('Hola mundo!!')"
+      class="btn btn-dark"
+    />
+    <input type="text" id="texto" value="Prueba" />
+    <input
+      type="button"
+      id="boton2"
+      value="Boton Ej 2"
+      class="btn btn-primary"
+    />
+
+    <p id="parrafo3"></p>
+    <input type="text" id="texto3" />
+    <input
+      type="button"
+      id="boton3"
+      value="Boton Ej 3"
+      class="btn btn-primary"
+    />
+
+    <p id="parrafo4"></p>
+    <input type="text" id="texto4" />
+    <input
+      type="button"
+      id="boton4"
+      value="Boton Ej 4"
+      class="btn btn-primary"
+    />
+
+  </section>
+
+-->
