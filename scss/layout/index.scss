@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    main {
+        flex: 1;
+        text-align: center;
+        padding: 40px 0px 40px 0px;
+
+        .campo {
+            padding: 20px;
+
+            label {
+                font-size: large;
+                font-weight: bold;
+            }
+        }
+
+        #resultadofinal {
+            padding: 40px;
+        }
+    }
+
+}

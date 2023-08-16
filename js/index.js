@@ -1,51 +1,65 @@
+document.getElementById("botoncalcular").addEventListener("click", () => {
+  const DatosUsuario = {
+    inicial: parseInt(document.getElementById("montoinicial").value),
+    tasa: parseFloat(document.getElementById("tasanominal").value),
+    periodo: parseInt(document.getElementById("periodointeres").value),
+    aporte: parseInt(document.getElementById("aportemensual").value),
+  };
 
-  const datosUsuario = {
-    inicial: parseInt(prompt("Ingrese el monto inicial de la inversión:")),
-    tasa: parseInt(prompt("Ingrese la tasa de interés anual estimada:")),
-    periodo: parseInt(prompt("Ingrese el tiempo de la inversión en años:")),
-    aporte: parseInt(prompt("Ingrese el monto a adicionar mensualmente:"))
-  }
+  const resultadofinal = calcularInteres(DatosUsuario);
+  guardarEnLocal(resultadofinal);
+  mostrar(resultadofinal);
+});
 
-function calcularInteres(inicial, tasa, tiempo, aporte) {
-  const factor = tasa / 100;
-    let monto = inicial;
-    let resultadoanual = [];
-    
-    for (let anual = 1; anual <= tiempo; anual++) {
-      let aportetotal = 0;
-      for (let mes = 1; mes <= 12; mes++) {
+function calcularInteres(DatosUsuario) {
+  const factor = DatosUsuario.tasa / 100;
+  let monto = DatosUsuario.inicial;
+  let resultadoanual = [];
+
+  for (let anual = 1; anual <= DatosUsuario.periodo; anual++) {
+    let aportetotal = 0;
+    for (let mes = 1; mes <= 12; mes++) {
       monto += monto * (factor / 12);
-      monto += aporte;
-      aportetotal += aporte;
-      }
-      
-      resultadoanual.push ({
-        año: anual,
-        monto: monto.toFixed(2),
-        aportetotal: aportetotal.toFixed(2),
-      });
+      monto += DatosUsuario.aporte;
+      aportetotal += DatosUsuario.aporte;
     }
-    
-    return resultadoanual;
+
+    resultadoanual.push({
+      año: anual,
+      monto: monto.toFixed(2),
+      aportetotal: aportetotal.toFixed(2),
+    });
   }
 
-  const resultados = calcularInteres(datosUsuario.inicial, datosUsuario.tasa, datosUsuario.periodo, datosUsuario.aporte);
-
-console.log("Detalles de la inversión:");
-
-console.log("Monto inicial: $", datosUsuario.inicial);
-
-console.log("Tasa de interés anual estimada: ", datosUsuario.tasa, "%");
-
-if(datosUsuario.periodo == 1){
-  console.log("Tiempo de la inversión: ", datosUsuario.periodo, "año");
-} else {
-  console.log("Tiempo de la inversión: ", datosUsuario.periodo, "años");
+  return resultadoanual;
 }
 
-console.log("Monto mensual de la contribución: $", datosUsuario.aporte);
+function mostrar(resultadoanual) {
+  const divResultado = document.getElementById("resultadofinal");
+  divResultado.innerHTML = "A continuación se encuentra el rendimiento estimado de su inversion:";
 
-resultados.forEach((resultado) => {
-  console.log("Año", resultado.año, ": $", resultado.monto, "(total aportado", resultado.aportetotal, ")");
+  resultadoanual.forEach((resultado) => {
+    const divResultadoItem = document.createElement("div");
+    divResultadoItem.classList.add("resultado-item");
+
+    divResultadoItem.innerHTML = `
+      <p>Año: ${resultado.año}</p>
+      <p>Monto: $${resultado.monto}</p>
+      <p>Aporte Total: $${resultado.aportetotal}</p>
+      <hr>
+    `;
+
+    divResultado.appendChild(divResultadoItem);
+  });
+}
+
+function guardarEnLocal(resultadoanual) {
+  localStorage.setItem("resultados", JSON.stringify(resultadoanual));
+}
+
+window.addEventListener("load", () => {
+  const guardados = localStorage.getItem("resultados");
+  if (guardados) {
+    mostrar(JSON.parse(guardados));
+  }
 });
-  

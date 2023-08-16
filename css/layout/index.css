@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body main {
+  flex: 1;
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+}
+body main .campo {
+  padding: 20px;
+}
+body main .campo label {
+  font-size: large;
+  font-weight: bold;
+}
+body main #resultadofinal {
+  padding: 40px;
+}
+
+/*# sourceMappingURL=index.css.map */

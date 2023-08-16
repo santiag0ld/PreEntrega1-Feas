@@ -1,0 +1,23 @@
+header {
+  color: white;
+  background-color: #285202;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+header .title {
+  color: 0;
+  font-size: large;
+}
+header .navbar ul {
+  display: flex;
+  flex-direction: row;
+}
+header .navbar ul li {
+  list-style: none;
+  padding: 0px 10px 0px 10px;
+}
+
+/*# sourceMappingURL=navbar.css.map */
