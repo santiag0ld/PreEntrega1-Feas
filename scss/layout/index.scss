@@ -2,24 +2,60 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
     main {
+        background-color: #dde8b3;
+
+        display: flex;
         flex: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
         text-align: center;
         padding: 40px 0px 40px 0px;
 
-        .campo {
-            padding: 20px;
+        .campo-box {
 
-            label {
-                font-size: large;
-                font-weight: bold;
+            .campo {
+                padding: 20px;
+
+                label {
+                    font-size: large;
+                    font-weight: bold;
+                }
+
+                input {
+                    background-color: #bfcc98 ;
+                    border:#dde8b3;
+                    padding: 5px;
+                    text-align: center;
+
+                    &:hover {
+                        color: #dde8b3;
+                        background-color: #598c58;
+                    }
+                }
             }
+
+            .botones {
+
+                #botoncalcular {
+                    background-color: #bfcc98 ;
+                    border:#dde8b3;
+                    font-size: large;
+                    padding: 5px;
+                    
+                    &:hover {
+                        color: #dde8b3;
+                        background-color: #598c58;
+                    }
+                }
+            }        
+            
         }
 
         #resultadofinal {
             padding: 40px;
         }
     }
-
 }

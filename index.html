@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Calculadora</title>
 </head>
 
@@ -25,40 +26,43 @@
 
   <main>
 
-    <div class="campo">
-      <label for="inicial"> Monto Inicial</label>
-      <p>Ingrese el monto que desea invertir.</p>
-      <input type="number" id="montoinicial" required>
-    </div>
-    <div class="campo">
-      <label for="tasa"> Interes Anual</label>
-      <p>Ingrese el interés total anual estimado.</p>
-      <input type="number" id="tasanominal" required>
-    </div>
-    <div class="campo">
-      <label for="periodo"> Tiempo de la Inversión</label>
-      <p>Ingrese el tiempo por el que se mantendrá la inversión en años.</p>
-      <input type="number" id="periodointeres" required>
-    </div>
-    <div class="campo">
-      <label for="aporte"> Aporte mensual</label>
-      <p>Ingrese el monto que desee aportar mensualmente.</p>
-      <input type="number" id="aportemensual" required>
-    </div>
-    <div class="botones">
-      <button id="botoncalcular">Calcular</button>
-      <button id="botonreset">Reiniciar</button>
-    </div>
+    <div id="stockData"></div>
+
+    <section class="campo-box">
+      <div class="campo">
+        <label for="inicial"> Monto Inicial</label>
+        <p>Ingrese el monto que desea invertir.</p>
+        <input type="number" id="montoinicial" required>
+      </div>
+      <div class="campo">
+        <label for="tasa"> Interes Anual</label>
+        <p>Ingrese el interés total anual estimado (%).</p>
+        <input type="number" id="tasanominal" required>
+      </div>
+      <div class="campo">
+        <label for="periodo"> Tiempo de la Inversión</label>
+        <p>Ingrese el tiempo por el que se mantendrá la inversión en años.</p>
+        <input type="number" id="periodointeres" required>
+      </div>
+      <div class="campo">
+        <label for="aporte"> Aporte mensual</label>
+        <p>Ingrese el monto que desee aportar mensualmente.</p>
+        <input type="number" id="aportemensual" required>
+      </div>
+      <div class="botones">
+        <button id="botoncalcular">Calcular</button>
+      </div>
+    </section>
     <div id="resultadofinal"></div>
 
   </main>
 
   <footer>
-    Santiago Feas - 2023
+    © Copyright - Santiago Feas - 2023.
   </footer>
 
-  <script src="./js/index.js"></script>
 
+  <script src="./js/index.js"></script>
 
 </body>
 
